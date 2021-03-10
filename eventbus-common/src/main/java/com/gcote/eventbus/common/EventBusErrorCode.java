@@ -15,9 +15,8 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
-
-
-
+public class EventBusErrorCode {
+    public static final int RR_REQUEST_TIMEOUT = 1;
+}

@@ -15,9 +15,26 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.protocol.header;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.rocketmq.remoting.CommandCustomHeader;
+import org.apache.rocketmq.remoting.annotation.CFNotNull;
+import org.apache.rocketmq.remoting.exception.RemotingCommandException;
 
+public class NotifyTopicChangedRequestHeader implements CommandCustomHeader {
+    @CFNotNull
+    private String topic;
 
+    @Override
+    public void checkFields() throws RemotingCommandException {
 
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+}

@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.message;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
-
-
-
+public class EventBusMessageConst {
+    public static final String LEAVE_TIME = "LEAVE_TIME";            //leaveBrokerTime
+    public static final String ARRIVE_TIME = "ARRIVE_TIME";          //arriveClientTime
+}

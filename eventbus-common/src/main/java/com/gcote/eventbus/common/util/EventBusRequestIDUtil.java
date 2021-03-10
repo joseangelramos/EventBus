@@ -15,9 +15,19 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.util;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import java.util.UUID;
 
-
-
+public class EventBusRequestIDUtil {
+    public static String createUniqueName(String prefix) {
+        if (prefix != null && prefix.trim().length() != 0) {
+            StringBuilder bldr = new StringBuilder(prefix);
+            bldr.append("/");
+            bldr.append(UUID.randomUUID().toString());
+            return bldr.toString();
+        } else {
+            return UUID.randomUUID().toString();
+        }
+    }
+}

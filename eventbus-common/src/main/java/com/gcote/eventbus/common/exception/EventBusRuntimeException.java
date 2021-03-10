@@ -15,9 +15,14 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.exception;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+public class EventBusRuntimeException extends RuntimeException {
+    public EventBusRuntimeException(String message) {
+        super(message);
+    }
 
-
-
+    public EventBusRuntimeException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}

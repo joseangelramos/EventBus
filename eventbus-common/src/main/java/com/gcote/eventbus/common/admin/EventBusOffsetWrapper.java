@@ -15,9 +15,18 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.admin;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.rocketmq.common.admin.OffsetWrapper;
 
+public class EventBusOffsetWrapper extends OffsetWrapper {
+    private long lastDeliverOffset;
 
+    public long getLastDeliverOffset() {
+        return lastDeliverOffset;
+    }
 
+    public void setLastDeliverOffset(long lastDeliverOffset) {
+        this.lastDeliverOffset = lastDeliverOffset;
+    }
+}

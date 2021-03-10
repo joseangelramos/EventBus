@@ -15,9 +15,26 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.namesrv;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.commons.lang3.StringUtils;
+import org.apache.rocketmq.common.MixAll;
+import org.apache.rocketmq.namesrv.NamesrvStartup;
+
+public class EventBusNamesrvStartup {
+
+    private static final String DEFAULT_ROCKETMQ_HOME_PATH = ".";
+
+    //init default rocketmq home path.
+    public static void initRocketMQHomePath() {
+        String rocketmqHome = System.getProperty(MixAll.ROCKETMQ_HOME_PROPERTY, System.getenv(MixAll.ROCKETMQ_HOME_ENV));
+        if (StringUtils.isBlank(rocketmqHome)) {
+            System.setProperty(MixAll.ROCKETMQ_HOME_PROPERTY, DEFAULT_ROCKETMQ_HOME_PATH);
+        }
+    }
 
 
-
+    public static void main(String[] args) {
+        NamesrvStartup.main0(args);
+    }
+}

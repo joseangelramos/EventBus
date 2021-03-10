@@ -1,0 +1,14 @@
+
+List Log = [
+    "org.slf4j:slf4j-log4j12:1.7.12",
+    "log4j:log4j:1.2.17"
+]
+
+dependencies {
+    compile project(":eventbus-common")
+    testCompile project(":eventbus-common")
+    compile "org.apache.rocketmq:rocketmq-broker:$project.rocketmqVersion"
+    compile "ch.qos.logback:logback-core:1.2.3"
+    compile "ch.qos.logback:logback-classic:1.2.3"
+    testCompile Log
+}

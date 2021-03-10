@@ -15,9 +15,13 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.protocol;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
-
-
-
+public class EventBusRequestCode {
+    public static final int PUSH_RR_REPLY_MSG_TO_CLIENT = 400;
+    public static final int SEND_DIRECT_MESSAGE = 402;
+    public static final int SEND_DIRECT_MESSAGE_V2 = 403;
+    public static final int GET_CONSUME_STATS_V2 = 506;
+    public static final int GET_CONSUMER_LIST_BY_GROUP_AND_TOPIC = 507;
+    public static final int NOTIFY_WHEN_TOPIC_CONFIG_CHANGE = 508;
+}

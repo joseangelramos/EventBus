@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.protocol;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+public class EventBusResponseCode {
+    public static final int CONSUME_DIFF_SPAN_TOO_LONG = 301;
 
-
-
+}

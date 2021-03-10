@@ -15,9 +15,13 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.tools.admin;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.rocketmq.remoting.RPCHook;
+import org.apache.rocketmq.tools.admin.DefaultMQAdminExt;
 
-
-
+public class EventBusAdminExt extends DefaultMQAdminExt {
+    public EventBusAdminExt(RPCHook rpcHook, long timeoutMillis) {
+        super(rpcHook, timeoutMillis);
+    }
+}

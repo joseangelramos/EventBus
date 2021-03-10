@@ -15,9 +15,14 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.client.impl.producer;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import java.util.concurrent.ConcurrentHashMap;
 
+public class ResponseTable {
+    private static ConcurrentHashMap<String/*requestId*/, RRResponseFuture> rrResponseFurtureConcurrentHashMap = new ConcurrentHashMap<String, RRResponseFuture>();
 
-
+    public static ConcurrentHashMap<String, RRResponseFuture> getRrResponseFurtureConcurrentHashMap() {
+        return rrResponseFurtureConcurrentHashMap;
+    }
+}

@@ -15,9 +15,16 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+//apply plugin: 'java'
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+dependencies {
+    compile project(":eventbus-common")
+    testCompile project(":eventbus-common")
 
+    compile "ch.qos.logback:logback-core:1.2.3"
+    compile "ch.qos.logback:logback-classic:1.2.3"
 
-
+    compile "org.apache.rocketmq:rocketmq-broker:$project.rocketmqVersion"
+    compile "org.apache.rocketmq:rocketmq-namesrv:$project.rocketmqVersion"
+    compile "org.apache.rocketmq:rocketmq-client:$project.rocketmqVersion"
+}

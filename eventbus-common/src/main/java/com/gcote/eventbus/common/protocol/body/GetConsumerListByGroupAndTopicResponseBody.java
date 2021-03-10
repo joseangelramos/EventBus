@@ -15,9 +15,20 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.common.protocol.body;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.rocketmq.remoting.protocol.RemotingSerializable;
 
+import java.util.List;
 
+public class GetConsumerListByGroupAndTopicResponseBody extends RemotingSerializable {
+    private List<String> consumerIdList;
 
+    public List<String> getConsumerIdList() {
+        return consumerIdList;
+    }
+
+    public void setConsumerIdList(List<String> consumerIdList) {
+        this.consumerIdList = consumerIdList;
+    }
+}

@@ -15,9 +15,12 @@
  * limitations under the License.
  */
 
-rootProject.name = 'EventBus'
+package com.gcote.eventbus.client.impl.producer;
 
-include 'eventbus-common', 'eventbus-client', 'eventbus-tools', 'eventbus-broker', 'eventbus-namesrv',  'eventbus-examples'
+import org.apache.rocketmq.common.message.Message;
 
+public interface RRCallback {
+    public void onSuccess(Message msg);
 
-
+    public void onException(Throwable e);
+}
